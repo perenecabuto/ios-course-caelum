@@ -12,10 +12,11 @@
 @interface ContactRepository : NSObject
 
 + (id) sharedManager;
+
 - (Contact *)find:(NSInteger)_id;
 - (void) add:(Contact*)contact;
 - (void) remove:(Contact*)contact;
 - (NSArray<Contact*> *)listAll;
-- (NSInteger) count;
+- (NSUInteger)count;
 
 @end

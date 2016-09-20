@@ -26,12 +26,15 @@ const NSInteger SECTIONS = 1;
     [self.navigationItem setTitle:@"Contatos"];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (void)showContactForm {
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController* vc = [storyboard instantiateViewControllerWithIdentifier:@"ContactForm"];
     [self.navigationController pushViewController:vc animated:YES];
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[ContactRepository sharedManager] count];
@@ -39,6 +42,15 @@ const NSInteger SECTIONS = 1;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return SECTIONS;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Contact* c = [[ContactRepository sharedManager]find:indexPath.row];
+
+    UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
+    cell.textLabel.text = c.name;
+
+    return cell;
 }
 
 @end

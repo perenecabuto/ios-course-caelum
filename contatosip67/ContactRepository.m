@@ -50,7 +50,7 @@ static ContactRepository* instance;
     return _contacts;
 }
 
-- (NSInteger)count {
+- (NSUInteger)count {
     return [_contacts count];
 }
 
