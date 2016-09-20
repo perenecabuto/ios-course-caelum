@@ -17,12 +17,12 @@ const NSInteger SECTIONS = 1;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem* buttom =
+    UIBarButtonItem* button =
     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                   target:self
                                                   action:@selector(showContactForm)];
-
-    [self.navigationItem setRightBarButtonItem:buttom];
+    
+    [self.navigationItem setRightBarButtonItem:button];
     [self.navigationItem setTitle:@"Contatos"];
 }
 

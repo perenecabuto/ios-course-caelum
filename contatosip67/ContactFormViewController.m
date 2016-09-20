@@ -15,6 +15,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"Cadastro"];
+    
+    UIBarButtonItem* button =
+    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                  target:self
+                                                  action:@selector(addContact:)];
+    
+    [self.navigationItem setRightBarButtonItem:button];
 }
 
 - (IBAction)addContact:(id)sender {
