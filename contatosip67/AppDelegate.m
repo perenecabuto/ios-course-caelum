@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ContactListViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    UIViewController* vc = [ContactListViewController new];
+    UIScreen* screen = [UIScreen mainScreen];
+    CGRect bounds = [screen bounds];
+    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    self.window = [[UIWindow alloc] initWithFrame:bounds];
+    [self.window setRootViewController:nav];
     return YES;
 }
 

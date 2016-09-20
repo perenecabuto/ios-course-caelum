@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		375F49D11D91708000CD04E3 /* ContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 375F49D01D91708000CD04E3 /* ContactListViewController.m */; };
 		376FEDE11D901828006F80FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FEDE01D901828006F80FC /* main.m */; };
 		376FEDE41D901828006F80FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FEDE31D901828006F80FC /* AppDelegate.m */; };
 		376FEDE71D901828006F80FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FEDE61D901828006F80FC /* ViewController.m */; };
@@ -15,6 +16,9 @@
 		376FEDEF1D901828006F80FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 376FEDED1D901828006F80FC /* LaunchScreen.storyboard */; };
 		376FEDFA1D901828006F80FC /* contatosip67Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FEDF91D901828006F80FC /* contatosip67Tests.m */; };
 		376FEE051D901828006F80FC /* contatosip67UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FEE041D901828006F80FC /* contatosip67UITests.m */; };
+		376FEE141D903D2F006F80FC /* ContactFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FEE131D903D2F006F80FC /* ContactFormViewController.m */; };
+		376FEE171D9058A8006F80FC /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FEE161D9058A8006F80FC /* Contact.m */; };
+		376FEE1A1D907674006F80FC /* ContactRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FEE191D907674006F80FC /* ContactRepository.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		375F49CF1D91708000CD04E3 /* ContactListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListViewController.h; sourceTree = "<group>"; };
+		375F49D01D91708000CD04E3 /* ContactListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactListViewController.m; sourceTree = "<group>"; };
 		376FEDDC1D901828006F80FC /* contatosip67.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = contatosip67.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		376FEDE01D901828006F80FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		376FEDE21D901828006F80FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +57,12 @@
 		376FEE001D901828006F80FC /* contatosip67UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = contatosip67UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		376FEE041D901828006F80FC /* contatosip67UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = contatosip67UITests.m; sourceTree = "<group>"; };
 		376FEE061D901829006F80FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		376FEE121D903D2F006F80FC /* ContactFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactFormViewController.h; sourceTree = "<group>"; };
+		376FEE131D903D2F006F80FC /* ContactFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactFormViewController.m; sourceTree = "<group>"; };
+		376FEE151D9058A8006F80FC /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		376FEE161D9058A8006F80FC /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		376FEE181D907674006F80FC /* ContactRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactRepository.h; sourceTree = "<group>"; };
+		376FEE191D907674006F80FC /* ContactRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactRepository.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +117,19 @@
 				376FEDE31D901828006F80FC /* AppDelegate.m */,
 				376FEDE51D901828006F80FC /* ViewController.h */,
 				376FEDE61D901828006F80FC /* ViewController.m */,
+				376FEE121D903D2F006F80FC /* ContactFormViewController.h */,
+				376FEE131D903D2F006F80FC /* ContactFormViewController.m */,
+				375F49CF1D91708000CD04E3 /* ContactListViewController.h */,
+				375F49D01D91708000CD04E3 /* ContactListViewController.m */,
 				376FEDE81D901828006F80FC /* Main.storyboard */,
 				376FEDEB1D901828006F80FC /* Assets.xcassets */,
 				376FEDED1D901828006F80FC /* LaunchScreen.storyboard */,
 				376FEDF01D901828006F80FC /* Info.plist */,
 				376FEDDF1D901828006F80FC /* Supporting Files */,
+				376FEE151D9058A8006F80FC /* Contact.h */,
+				376FEE161D9058A8006F80FC /* Contact.m */,
+				376FEE181D907674006F80FC /* ContactRepository.h */,
+				376FEE191D907674006F80FC /* ContactRepository.m */,
 			);
 			path = contatosip67;
 			sourceTree = "<group>";
@@ -270,7 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376FEE1A1D907674006F80FC /* ContactRepository.m in Sources */,
+				375F49D11D91708000CD04E3 /* ContactListViewController.m in Sources */,
 				376FEDE71D901828006F80FC /* ViewController.m in Sources */,
+				376FEE141D903D2F006F80FC /* ContactFormViewController.m in Sources */,
+				376FEE171D9058A8006F80FC /* Contact.m in Sources */,
 				376FEDE41D901828006F80FC /* AppDelegate.m in Sources */,
 				376FEDE11D901828006F80FC /* main.m in Sources */,
 			);
@@ -498,6 +522,7 @@
 				376FEE0B1D901829006F80FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		376FEE0C1D901829006F80FC /* Build configuration list for PBXNativeTarget "contatosip67Tests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +531,7 @@
 				376FEE0E1D901829006F80FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		376FEE0F1D901829006F80FC /* Build configuration list for PBXNativeTarget "contatosip67UITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +540,7 @@
 				376FEE111D901829006F80FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

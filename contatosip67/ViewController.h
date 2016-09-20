@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *debug;
+@property (weak, nonatomic) IBOutlet UITextField *input;
 
 @end
 
