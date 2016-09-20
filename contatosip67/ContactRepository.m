@@ -34,12 +34,20 @@ static ContactRepository* instance;
     return self;
 }
 
-- (Contact *)find:(NSInteger)_id {
+- (Contact *)contactByID:(NSInteger)_id {
     return [_contacts objectAtIndex:_id];
+}
+
+- (NSInteger)getContactID:(Contact *)contact {
+    return [_contacts indexOfObject:contact];
 }
 
 - (void)add:(Contact *)contact {
     [_contacts addObject:contact];
+}
+
+- (void) update:(Contact*)contact byID:(NSInteger)id_ {
+    [_contacts setObject:contact atIndexedSubscript:id_];
 }
 
 - (void)remove:(Contact *)contact {

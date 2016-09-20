@@ -45,12 +45,19 @@ const NSInteger SECTIONS = 1;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Contact* c = [[ContactRepository sharedManager]find:indexPath.row];
+    Contact* c = [[ContactRepository sharedManager]contactByID:indexPath.row];
 
     UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
     cell.textLabel.text = c.name;
 
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ContactFormViewController* vc = [storyboard instantiateViewControllerWithIdentifier:@"ContactForm"];
+    vc.contact = [[ContactRepository sharedManager]contactByID:indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Contact.h"
 
 @interface ContactFormViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *name;
-@property (weak, nonatomic) IBOutlet UITextField *phone;
-@property (weak, nonatomic) IBOutlet UITextField *email;
-@property (weak, nonatomic) IBOutlet UITextField *address;
-@property (weak, nonatomic) IBOutlet UITextField *site;
-@property (weak, nonatomic) IBOutlet UILabel *debug;
+@property (weak, nonatomic) IBOutlet UITextField* name;
+@property (weak, nonatomic) IBOutlet UITextField* phone;
+@property (weak, nonatomic) IBOutlet UITextField* email;
+@property (weak, nonatomic) IBOutlet UITextField* address;
+@property (weak, nonatomic) IBOutlet UITextField* site;
+
+@property (weak, nonatomic) IBOutlet UILabel* debug;
+@property (weak, nonatomic) Contact* contact;
 
 @end
