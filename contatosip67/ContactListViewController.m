@@ -15,8 +15,14 @@
 
 const NSInteger SECTIONS = 1;
 
+# pragma UIViewControllerDelegate methods
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UILongPressGestureRecognizer* click =
+    [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(openMenu:)];
+    [self.tableView addGestureRecognizer:click];
     
     UIBarButtonItem* addButton =
     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
@@ -47,6 +53,8 @@ const NSInteger SECTIONS = 1;
     }
 }
 
+# pragma button callbacks
+
 - (void)toggleEdition {
     [self.tableView setEditing:!self.tableView.isEditing];
 }
@@ -59,6 +67,24 @@ const NSInteger SECTIONS = 1;
     }
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+- (void)openMenu:(UIGestureRecognizer*)gesture {
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        CGPoint p = [gesture locationInView:self.tableView];
+        NSIndexPath* path = [self.tableView indexPathForRowAtPoint:p];
+        Contact* c = [[ContactRepository sharedManager] contactByID:path.row];
+        
+        UIActionSheet* menu =
+        [[UIActionSheet alloc] initWithTitle: c.name
+                                    delegate: self
+                           cancelButtonTitle: nil
+                      destructiveButtonTitle: nil
+                           otherButtonTitles: @"Ligar", @"Site", @"Mapa", @"Email", nil];
+        
+    }
+}
+
+# pragma UITableViewDelegate methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[ContactRepository sharedManager] count];
