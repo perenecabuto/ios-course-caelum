@@ -17,17 +17,28 @@ const NSInteger SECTIONS = 1;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem* button =
+    UIBarButtonItem* addButton =
     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                   target:self
                                                   action:@selector(showContactForm)];
+
+    UIBarButtonItem* delButton =
+    [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
+                                                  target:self
+                                                  action:@selector(toggleEdition)];
     
-    [self.navigationItem setRightBarButtonItem:button];
+    [self.navigationItem setRightBarButtonItem:addButton];
+    [self.navigationItem setLeftBarButtonItem:delButton];
     [self.navigationItem setTitle:@"Contatos"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self.tableView setEditing:NO];
     [self.tableView reloadData];
+}
+
+- (void)toggleEdition {
+    [self.tableView setEditing:!self.tableView.isEditing];
 }
 
 - (void)showContactForm {
@@ -42,6 +53,14 @@ const NSInteger SECTIONS = 1;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return SECTIONS;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Contact* c = [[ContactRepository sharedManager] contactByID:indexPath.row];
+        [[ContactRepository sharedManager] remove:c];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
