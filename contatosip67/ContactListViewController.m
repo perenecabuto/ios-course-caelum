@@ -10,6 +10,7 @@
 #import "ContactFormViewController.h"
 #import "ContactRepository.h"
 
+
 @implementation ContactListViewController
 
 const NSInteger SECTIONS = 1;
@@ -21,7 +22,7 @@ const NSInteger SECTIONS = 1;
     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                   target:self
                                                   action:@selector(showContactForm)];
-
+    
     UIBarButtonItem* delButton =
     [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
                                                   target:self
@@ -37,6 +38,15 @@ const NSInteger SECTIONS = 1;
     [self.tableView reloadData];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    if (_selectedContact) {
+        NSInteger id_ = [[ContactRepository sharedManager] getContactID:_selectedContact];
+        NSIndexPath* path = [NSIndexPath indexPathForItem:id_ inSection:0];
+        [self.tableView selectRowAtIndexPath:path animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+        _selectedContact = nil;
+    }
+}
+
 - (void)toggleEdition {
     [self.tableView setEditing:!self.tableView.isEditing];
 }
@@ -44,6 +54,9 @@ const NSInteger SECTIONS = 1;
 - (void)showContactForm {
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController* vc = [storyboard instantiateViewControllerWithIdentifier:@"ContactForm"];
+    if ([vc isKindOfClass:[ContactFormViewController class]]) {
+        ((ContactFormViewController *)vc).delegate = self;
+    }
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -59,24 +72,30 @@ const NSInteger SECTIONS = 1;
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Contact* c = [[ContactRepository sharedManager] contactByID:indexPath.row];
         [[ContactRepository sharedManager] remove:c];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Contact* c = [[ContactRepository sharedManager]contactByID:indexPath.row];
-
     UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
     cell.textLabel.text = c.name;
-
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ContactFormViewController* vc = [storyboard instantiateViewControllerWithIdentifier:@"ContactForm"];
-    vc.contact = [[ContactRepository sharedManager]contactByID:indexPath.row];
-    [self.navigationController pushViewController:vc animated:YES];
+    _selectedContact = [[ContactRepository sharedManager] contactByID:indexPath.row];
+    [self showContactForm];
+}
+
+# pragma ContactFormViewControllerDelegate methods
+
+- (void)hightlightContact:(Contact *)contact {
+    _selectedContact = contact;
+}
+
+- (Contact *)selectedConctact {
+    return _selectedContact;
 }
 
 @end

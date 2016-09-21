@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Contact.h"
+#import "ContactFormViewController.h"
 
-@interface ContactListViewController : UITableViewController
+
+@interface ContactListViewController : UITableViewController <ContactFormViewControllerDelegate>
+
+@property (nonatomic, strong) Contact* selectedContact;
 
 - (void)showContactForm;
 
