@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Contact.h"
 
+@protocol ContactFormViewControllerDelegate <NSObject>
+
+- (Contact*)selectedConctact;
+- (void)hightlightContact:(Contact*)contact;
+
+@end
+
+
 @interface ContactFormViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField* name;
@@ -17,6 +25,6 @@
 @property (weak, nonatomic) IBOutlet UITextField* address;
 @property (weak, nonatomic) IBOutlet UITextField* site;
 
-@property (weak, nonatomic) Contact* contact;
+@property (weak, nonatomic) id<ContactFormViewControllerDelegate> delegate;
 
 @end
