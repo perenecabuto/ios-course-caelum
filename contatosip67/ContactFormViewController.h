@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITextField* address;
 @property (weak, nonatomic) IBOutlet UITextField* site;
 
-@property (weak, nonatomic) IBOutlet UILabel* debug;
 @property (weak, nonatomic) Contact* contact;
 
 @end

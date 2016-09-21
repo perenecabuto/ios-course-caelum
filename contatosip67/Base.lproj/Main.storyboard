@@ -144,19 +144,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIX-Kg-47R">
-                                <rect key="frame" x="13" y="275" width="287" height="23"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="address" destination="xm9-Zu-TrA" id="36x-OX-J3B"/>
-                        <outlet property="debug" destination="qIX-Kg-47R" id="mgU-Zy-ZWC"/>
                         <outlet property="email" destination="2Ix-k6-IcD" id="Mur-Y7-eU1"/>
                         <outlet property="name" destination="03v-Rt-G9h" id="1I1-0g-OIe"/>
                         <outlet property="phone" destination="yHL-Y2-iMt" id="BhM-uu-qEu"/>
