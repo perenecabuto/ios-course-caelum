@@ -23,6 +23,7 @@
 		37E013371D9420190072E3AC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E013361D9420190072E3AC /* MessageUI.framework */; };
 		37E013431D945BF20072E3AC /* ContactsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E013411D945BF20072E3AC /* ContactsMapViewController.m */; };
 		37E013441D945BF20072E3AC /* ContactsMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E013421D945BF20072E3AC /* ContactsMapViewController.xib */; };
+		37E013461D9467820072E3AC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E013451D9467820072E3AC /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		37E013401D945BF20072E3AC /* ContactsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsMapViewController.h; sourceTree = "<group>"; };
 		37E013411D945BF20072E3AC /* ContactsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsMapViewController.m; sourceTree = "<group>"; };
 		37E013421D945BF20072E3AC /* ContactsMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsMapViewController.xib; sourceTree = "<group>"; };
+		37E013451D9467820072E3AC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37E013461D9467820072E3AC /* MapKit.framework in Frameworks */,
 				37E013371D9420190072E3AC /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +107,7 @@
 		376FEDD31D901828006F80FC = {
 			isa = PBXGroup;
 			children = (
+				37E013451D9467820072E3AC /* MapKit.framework */,
 				37E013361D9420190072E3AC /* MessageUI.framework */,
 				376FEDDE1D901828006F80FC /* contatosip67 */,
 				376FEDF81D901828006F80FC /* contatosip67Tests */,
