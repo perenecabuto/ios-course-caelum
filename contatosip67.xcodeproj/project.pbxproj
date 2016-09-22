@@ -65,8 +65,8 @@
 		376FEE161D9058A8006F80FC /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		376FEE181D907674006F80FC /* ContactRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactRepository.h; sourceTree = "<group>"; };
 		376FEE191D907674006F80FC /* ContactRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactRepository.m; sourceTree = "<group>"; };
-		37E013331D9415D90072E3AC /* ContactMenuManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactMenuManager.h; sourceTree = "<group>"; };
-		37E013341D9415D90072E3AC /* ContactMenuManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactMenuManager.m; sourceTree = "<group>"; };
+		37E013331D9415D90072E3AC /* ContactMenuManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactMenuManager.h; path = ../ContactMenuManager.h; sourceTree = "<group>"; };
+		37E013341D9415D90072E3AC /* ContactMenuManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactMenuManager.m; path = ../ContactMenuManager.m; sourceTree = "<group>"; };
 		37E013361D9420190072E3AC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -100,8 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				37E013361D9420190072E3AC /* MessageUI.framework */,
-				37E013331D9415D90072E3AC /* ContactMenuManager.h */,
-				37E013341D9415D90072E3AC /* ContactMenuManager.m */,
 				376FEDDE1D901828006F80FC /* contatosip67 */,
 				376FEDF81D901828006F80FC /* contatosip67Tests */,
 				376FEE031D901828006F80FC /* contatosip67UITests */,
@@ -139,6 +137,8 @@
 				376FEE161D9058A8006F80FC /* Contact.m */,
 				376FEE181D907674006F80FC /* ContactRepository.h */,
 				376FEE191D907674006F80FC /* ContactRepository.m */,
+				37E013331D9415D90072E3AC /* ContactMenuManager.h */,
+				37E013341D9415D90072E3AC /* ContactMenuManager.m */,
 			);
 			path = contatosip67;
 			sourceTree = "<group>";
