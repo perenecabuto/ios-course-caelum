@@ -33,7 +33,28 @@
 
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+            [self callContact];
+            break;
+        default:
+            break;
     }
+}
+
+- (void)callContact {
+    UIDevice *device = [UIDevice currentDevice];
+    if ([device.model isEqualToString:@"iPhone"]) {
+        NSString* phoneURL = [NSString stringWithFormat:@"tel:%@", _contact.phone];
+        [self openURL:phoneURL];
+    }
+    
+    NSLog(@"Call - %@", _contact.phone);
+}
+
+- (void)openURL:(NSString*)strURL {
+    NSURL* url = [NSURL URLWithString:strURL];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 @end
