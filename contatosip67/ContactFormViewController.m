@@ -39,7 +39,7 @@
         return;
     }
     
-    Contact* c = [[Contact alloc] initWithName:_name.text phone:_phone.text email:_email.text address:_address.text site:_site.text];
+    Contact* c = [self contactFromFields];
     NSInteger id_ = [[ContactRepository sharedManager] getContactID:[self.delegate selectedConctact]];
     [[ContactRepository sharedManager] update:c byID:id_];
     [self.delegate hightlightContact:c];
@@ -47,10 +47,15 @@
 }
 
 - (void)addContact:(id)sender {
-    Contact* c = [[Contact alloc] initWithName:_name.text phone:_phone.text email:_email.text address:_address.text site:_site.text];
+    Contact* c = [self contactFromFields];
     [[ContactRepository sharedManager] add:c];
     [self.delegate hightlightContact:c];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (Contact *) contactFromFields {
+    return [[Contact alloc]
+            initWithName:_name.text phone:_phone.text email:_email.text address:_address.text site:_site.text photo:_image.image];
 }
 
 - (IBAction)openImage:(id)sender {
