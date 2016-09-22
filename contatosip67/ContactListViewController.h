@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Contact.h"
 #import "ContactFormViewController.h"
+#import "ContactMenuManager.h"
 
 
 @interface ContactListViewController : UITableViewController <ContactFormViewControllerDelegate>
 
 @property (nonatomic, strong) Contact* selectedContact;
+@property (nonatomic, strong) ContactMenuManager *menu;
 
 - (void)showContactForm;
 

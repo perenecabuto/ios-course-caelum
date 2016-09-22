@@ -9,6 +9,7 @@
 #import "ContactListViewController.h"
 #import "ContactFormViewController.h"
 #import "ContactRepository.h"
+#import "ContactMenuManager.h"
 
 
 @implementation ContactListViewController
@@ -72,15 +73,11 @@ const NSInteger SECTIONS = 1;
     if (gesture.state == UIGestureRecognizerStateBegan) {
         CGPoint p = [gesture locationInView:self.tableView];
         NSIndexPath* path = [self.tableView indexPathForRowAtPoint:p];
-        Contact* c = [[ContactRepository sharedManager] contactByID:path.row];
-        
-        UIActionSheet* menu =
-        [[UIActionSheet alloc] initWithTitle: c.name
-                                    delegate: self
-                           cancelButtonTitle: nil
-                      destructiveButtonTitle: nil
-                           otherButtonTitles: @"Ligar", @"Site", @"Mapa", @"Email", nil];
-        
+        if (path) {
+            Contact* c = [[ContactRepository sharedManager] contactByID:path.row];
+            _menu = [[ContactMenuManager alloc] initWithContact:c];
+            [_menu showInView:self.view];
+        }
     }
 }
 
