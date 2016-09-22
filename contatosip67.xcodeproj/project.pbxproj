@@ -21,6 +21,8 @@
 		376FEE1A1D907674006F80FC /* ContactRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FEE191D907674006F80FC /* ContactRepository.m */; };
 		37E013351D9415D90072E3AC /* ContactMenuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E013341D9415D90072E3AC /* ContactMenuManager.m */; };
 		37E013371D9420190072E3AC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E013361D9420190072E3AC /* MessageUI.framework */; };
+		37E013431D945BF20072E3AC /* ContactsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E013411D945BF20072E3AC /* ContactsMapViewController.m */; };
+		37E013441D945BF20072E3AC /* ContactsMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E013421D945BF20072E3AC /* ContactsMapViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,9 @@
 		37E013331D9415D90072E3AC /* ContactMenuManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactMenuManager.h; path = ../ContactMenuManager.h; sourceTree = "<group>"; };
 		37E013341D9415D90072E3AC /* ContactMenuManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactMenuManager.m; path = ../ContactMenuManager.m; sourceTree = "<group>"; };
 		37E013361D9420190072E3AC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		37E013401D945BF20072E3AC /* ContactsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsMapViewController.h; sourceTree = "<group>"; };
+		37E013411D945BF20072E3AC /* ContactsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsMapViewController.m; sourceTree = "<group>"; };
+		37E013421D945BF20072E3AC /* ContactsMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsMapViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +125,9 @@
 		376FEDDE1D901828006F80FC /* contatosip67 */ = {
 			isa = PBXGroup;
 			children = (
+				37E013401D945BF20072E3AC /* ContactsMapViewController.h */,
+				37E013411D945BF20072E3AC /* ContactsMapViewController.m */,
+				37E013421D945BF20072E3AC /* ContactsMapViewController.xib */,
 				376FEDE21D901828006F80FC /* AppDelegate.h */,
 				376FEDE31D901828006F80FC /* AppDelegate.m */,
 				376FEDE51D901828006F80FC /* ViewController.h */,
@@ -274,6 +282,7 @@
 			files = (
 				376FEDEF1D901828006F80FC /* LaunchScreen.storyboard in Resources */,
 				376FEDEC1D901828006F80FC /* Assets.xcassets in Resources */,
+				37E013441D945BF20072E3AC /* ContactsMapViewController.xib in Resources */,
 				376FEDEA1D901828006F80FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +315,7 @@
 				376FEE141D903D2F006F80FC /* ContactFormViewController.m in Sources */,
 				376FEE171D9058A8006F80FC /* Contact.m in Sources */,
 				376FEDE41D901828006F80FC /* AppDelegate.m in Sources */,
+				37E013431D945BF20072E3AC /* ContactsMapViewController.m in Sources */,
 				376FEDE11D901828006F80FC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
