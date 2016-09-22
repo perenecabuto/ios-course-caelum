@@ -103,6 +103,8 @@ const NSInteger SECTIONS = 1;
     Contact* c = [[ContactRepository sharedManager]contactByID:indexPath.row];
     UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
     cell.textLabel.text = c.name;
+    cell.imageView.image = c.photo;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - <%@>", c.phone, c.email];
     return cell;
 }
 
