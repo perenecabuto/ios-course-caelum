@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIViewController.h>
+#import <MapKit/MKMapView.h>
 
-@interface ContactsMapViewController : NSObject
+
+@interface ContactsMapViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet MKMapView *map;
 
 @end
