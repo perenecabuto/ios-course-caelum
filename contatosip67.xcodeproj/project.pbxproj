@@ -19,6 +19,7 @@
 		376FEE141D903D2F006F80FC /* ContactFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FEE131D903D2F006F80FC /* ContactFormViewController.m */; };
 		376FEE171D9058A8006F80FC /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FEE161D9058A8006F80FC /* Contact.m */; };
 		376FEE1A1D907674006F80FC /* ContactRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FEE191D907674006F80FC /* ContactRepository.m */; };
+		37E013351D9415D90072E3AC /* ContactMenuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E013341D9415D90072E3AC /* ContactMenuManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		376FEE161D9058A8006F80FC /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		376FEE181D907674006F80FC /* ContactRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactRepository.h; sourceTree = "<group>"; };
 		376FEE191D907674006F80FC /* ContactRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactRepository.m; sourceTree = "<group>"; };
+		37E013331D9415D90072E3AC /* ContactMenuManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactMenuManager.h; sourceTree = "<group>"; };
+		37E013341D9415D90072E3AC /* ContactMenuManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactMenuManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 		376FEDD31D901828006F80FC = {
 			isa = PBXGroup;
 			children = (
+				37E013331D9415D90072E3AC /* ContactMenuManager.h */,
+				37E013341D9415D90072E3AC /* ContactMenuManager.m */,
 				376FEDDE1D901828006F80FC /* contatosip67 */,
 				376FEDF81D901828006F80FC /* contatosip67Tests */,
 				376FEE031D901828006F80FC /* contatosip67UITests */,
@@ -293,6 +298,7 @@
 				376FEE1A1D907674006F80FC /* ContactRepository.m in Sources */,
 				375F49D11D91708000CD04E3 /* ContactListViewController.m in Sources */,
 				376FEDE71D901828006F80FC /* ViewController.m in Sources */,
+				37E013351D9415D90072E3AC /* ContactMenuManager.m in Sources */,
 				376FEE141D903D2F006F80FC /* ContactFormViewController.m in Sources */,
 				376FEE171D9058A8006F80FC /* Contact.m in Sources */,
 				376FEDE41D901828006F80FC /* AppDelegate.m in Sources */,
