@@ -17,8 +17,9 @@
 @end
 
 
-@interface ContactFormViewController : UIViewController
+@interface ContactFormViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView* image;
 @property (weak, nonatomic) IBOutlet UITextField* name;
 @property (weak, nonatomic) IBOutlet UITextField* phone;
 @property (weak, nonatomic) IBOutlet UITextField* email;
@@ -26,5 +27,7 @@
 @property (weak, nonatomic) IBOutlet UITextField* site;
 
 @property (weak, nonatomic) id<ContactFormViewControllerDelegate> delegate;
+
+- (IBAction)openImage:(id)sender;
 
 @end

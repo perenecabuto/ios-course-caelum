@@ -28,6 +28,7 @@
         _phone.text = contact.phone;
         _email.text = contact.email;
         _site.text = contact.site;
+        _image.image = contact.photo;
     }
     
     [self.navigationItem setRightBarButtonItem:button];
@@ -50,6 +51,20 @@
     [[ContactRepository sharedManager] add:c];
     [self.delegate hightlightContact:c];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)openImage:(id)sender {
+    UIImagePickerController* picker = [UIImagePickerController new];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.allowsEditing = YES;
+    picker.delegate = self;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    UIImage* selectedImage = [info valueForKey:UIImagePickerControllerEditedImage];
+    [_image setImage:selectedImage];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
