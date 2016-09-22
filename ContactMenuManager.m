@@ -37,6 +37,9 @@
         case 0:
             [self callContact];
             break;
+        case 1:
+            [self openContactSite];
+            break;
         default:
             break;
     }
@@ -50,6 +53,10 @@
     }
     
     NSLog(@"Call - %@", _contact.phone);
+}
+
+- (void)openContactSite {
+    [self openURL:_contact.site];
 }
 
 - (void)openURL:(NSString*)strURL {
