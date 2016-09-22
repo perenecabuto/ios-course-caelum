@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "Contact.h"
 
-@interface ContactMenuManager : NSObject
+@interface ContactMenuManager : NSObject<UIActionSheetDelegate>
+
+@property (nonatomic, weak) Contact* contact;
+
+- (id)initWithContact:(Contact*)contact;
+
+- (void)showInView:(UIView*)view;
 
 @end
