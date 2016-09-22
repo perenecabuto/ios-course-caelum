@@ -20,6 +20,7 @@
 		376FEE171D9058A8006F80FC /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FEE161D9058A8006F80FC /* Contact.m */; };
 		376FEE1A1D907674006F80FC /* ContactRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FEE191D907674006F80FC /* ContactRepository.m */; };
 		37E013351D9415D90072E3AC /* ContactMenuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E013341D9415D90072E3AC /* ContactMenuManager.m */; };
+		37E013371D9420190072E3AC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E013361D9420190072E3AC /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		376FEE191D907674006F80FC /* ContactRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactRepository.m; sourceTree = "<group>"; };
 		37E013331D9415D90072E3AC /* ContactMenuManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactMenuManager.h; sourceTree = "<group>"; };
 		37E013341D9415D90072E3AC /* ContactMenuManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactMenuManager.m; sourceTree = "<group>"; };
+		37E013361D9420190072E3AC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37E013371D9420190072E3AC /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +99,7 @@
 		376FEDD31D901828006F80FC = {
 			isa = PBXGroup;
 			children = (
+				37E013361D9420190072E3AC /* MessageUI.framework */,
 				37E013331D9415D90072E3AC /* ContactMenuManager.h */,
 				37E013341D9415D90072E3AC /* ContactMenuManager.m */,
 				376FEDDE1D901828006F80FC /* contatosip67 */,

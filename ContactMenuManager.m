@@ -43,6 +43,9 @@
         case 2:
             [self showContactPositionOnMap];
             break;
+        case 3:
+            [self sendEmailToContact];
+            break;
         default:
             break;
     }
@@ -66,6 +69,14 @@
     NSString* mapURL = [[NSString stringWithFormat:@"http://maps.google.com/maps?q=%@", _contact.address]
                         stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     [self openURL:mapURL];
+}
+
+- (void)sendEmailToContact {
+    MFMailComposeViewController* emailVC = [MFMailComposeViewController new];
+    [emailVC setToRecipients:@[_contact.email]];
+
+    UIViewController* rootVC = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    [rootVC presentViewController:emailVC animated:YES completion:nil];
 }
 
 - (void)openURL:(NSString*)strURL {
