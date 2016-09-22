@@ -7,7 +7,33 @@
 //
 
 #import "ContactMenuManager.h"
+@import MessageUI;
 
 @implementation ContactMenuManager
+
+- (id)initWithContact:(Contact*)contact {
+    self = [super init];
+    if (self) {
+        _contact = contact;
+    }
+
+    return self;
+}
+
+- (void)showInView:(UIView*)view {
+    UIActionSheet* actionSheet =
+    [[UIActionSheet alloc] initWithTitle: _contact.name
+                                delegate: self
+                       cancelButtonTitle: @"Cancelar"
+                  destructiveButtonTitle: nil
+                       otherButtonTitles: @"Ligar", @"Site", @"Mapa", @"Email", nil];
+
+    [actionSheet showInView:view];
+}
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    }
+}
 
 @end
