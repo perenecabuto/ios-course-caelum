@@ -40,6 +40,9 @@
         case 1:
             [self openContactSite];
             break;
+        case 2:
+            [self showContactPositionOnMap];
+            break;
         default:
             break;
     }
@@ -57,6 +60,12 @@
 
 - (void)openContactSite {
     [self openURL:_contact.site];
+}
+
+- (void)showContactPositionOnMap {
+    NSString* mapURL = [[NSString stringWithFormat:@"http://maps.google.com/maps?q=%@", _contact.address]
+                        stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    [self openURL:mapURL];
 }
 
 - (void)openURL:(NSString*)strURL {
