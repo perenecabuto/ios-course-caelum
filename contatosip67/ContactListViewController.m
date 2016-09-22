@@ -38,6 +38,9 @@ const NSInteger SECTIONS = 1;
     [self.navigationItem setRightBarButtonItem:addButton];
     [self.navigationItem setLeftBarButtonItem:delButton];
     [self.navigationItem setTitle:@"Contatos"];
+    
+    self.tabBarItem =
+    [[UITabBarItem alloc] initWithTitle:@"Lista" image:[UIImage imageNamed:@"list.png"] tag: 0];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

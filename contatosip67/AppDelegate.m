@@ -8,22 +8,26 @@
 
 #import "AppDelegate.h"
 #import "ContactListViewController.h"
-
-@interface AppDelegate ()
-
-@end
+#import "ContactsMapViewController.h"
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    UIViewController* vc = [ContactListViewController new];
+
+    UIViewController* mapVC = [ContactsMapViewController new];
+    UIViewController* listVC = [ContactListViewController new];
+
     UIScreen* screen = [UIScreen mainScreen];
     CGRect bounds = [screen bounds];
-    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:listVC];
     
+    UITabBarController* tabs = [UITabBarController new];
+
+    tabs.viewControllers = @[nav, mapVC];
+
     self.window = [[UIWindow alloc] initWithFrame:bounds];
-    [self.window setRootViewController:nav];
+    [self.window setRootViewController:tabs];
+    
     return YES;
 }
 

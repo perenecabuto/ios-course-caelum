@@ -10,4 +10,9 @@
 
 @implementation ContactsMapViewController
 
+- (void)viewDidLoad {
+    self.tabBarItem =
+    [[UITabBarItem alloc] initWithTitle:@"Mapa" image:[UIImage imageNamed:@"map.png"] tag: 0];
+}
+
 @end
