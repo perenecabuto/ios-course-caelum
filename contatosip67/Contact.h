@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIImage.h>
 
 @interface Contact : NSObject
 
@@ -15,7 +16,8 @@
 @property (nonatomic, strong) NSString* email;
 @property (nonatomic, strong) NSString* address;
 @property (nonatomic, strong) NSString* site;
+@property (nonatomic, strong) UIImage* photo;
 
-- (id)initWithName:(NSString*)name phone:(NSString*)phone email:(NSString*)email address:(NSString*)address site:(NSString*)site;
+- (id)initWithName:(NSString*)name phone:(NSString*)phone email:(NSString*)email address:(NSString*)address site:(NSString*)site photo:(UIImage*)photo;
 
 @end

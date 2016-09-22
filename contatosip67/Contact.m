@@ -11,7 +11,7 @@
 
 @implementation Contact
 
-- (id)initWithName:(NSString*)name phone:(NSString*)phone email:(NSString*)email address:(NSString*)address site:(NSString*)site
+- (id)initWithName:(NSString*)name phone:(NSString*)phone email:(NSString*)email address:(NSString*)address site:(NSString*)site photo:(UIImage*)photo
 {
     self = [super init];
     if (self) {
@@ -20,6 +20,7 @@
         self.email = email;
         self.address = address;
         self.site = site;
+        self.photo = photo;
     }
     return self;
 }
