@@ -76,6 +76,23 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
+- (IBAction)findAddressPosition:(id)sender {
+    [_findAddressLoading startAnimating];
+    [_findAddressButton setHidden:YES];
+
+    CLGeocoder* geo = [CLGeocoder new];
+    [geo geocodeAddressString:_address.text completionHandler:
+     ^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+         if (error == nil && [placemarks count] > 0) {
+             CLPlacemark* place = placemarks[0];
+            _addressCoords = place.location.coordinate;
+             _lonLatDebug.text = [NSString stringWithFormat:@"Lon/Lat: %f/%f", _addressCoords.longitude, _addressCoords.latitude];
+         } else {
+             _lonLatDebug.text = @"No location found";
+         }
+         [_findAddressButton setHidden:NO];
+         [_findAddressLoading stopAnimating];
+     }];
 }
 
 @end
