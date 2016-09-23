@@ -7,6 +7,7 @@
 //
 
 #import "ContactsMapViewController.h"
+#import "ContactRepository.h"
 
 
 @implementation ContactsMapViewController
@@ -19,6 +20,15 @@
     [self.navigationItem setRightBarButtonItem:gpsButton];
     
     [[CLLocationManager new] requestAlwaysAuthorization];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    NSArray<id<MKAnnotation>> *contatos = [[ContactRepository sharedManager] listAll];
+    [_map addAnnotations:contatos];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [_map removeAnnotations:_map.annotations];
 }
 
 @end

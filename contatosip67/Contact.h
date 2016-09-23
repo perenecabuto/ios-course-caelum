@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIImage.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface Contact : NSObject
+@interface Contact : NSObject<MKAnnotation>
 
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, strong) NSString* phone;

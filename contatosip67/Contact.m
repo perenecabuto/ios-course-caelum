@@ -30,9 +30,22 @@
     _lon = coords.longitude;
 }
 
+- (CLLocationCoordinate2D)coordinate {
+    return CLLocationCoordinate2DMake(_lat, _lon);
+}
+
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"%@ (%@) <%@>", _name, _phone, _email];
+}
+
+- (NSString*)title {
+    return self.name;
+}
+
+- (NSString*)subtitle {
+    return self.address;
 }
 
 @end
