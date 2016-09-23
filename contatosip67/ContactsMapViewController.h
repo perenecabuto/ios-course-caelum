@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIViewController.h>
-#import <MapKit/MKMapView.h>
+#import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 
 @interface ContactsMapViewController : UIViewController

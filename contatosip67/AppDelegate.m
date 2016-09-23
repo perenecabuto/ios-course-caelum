@@ -15,16 +15,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     UIViewController* mapVC = [ContactsMapViewController new];
+    UINavigationController* mapNav = [[UINavigationController alloc] initWithRootViewController:mapVC];
+    
     UIViewController* listVC = [ContactListViewController new];
+    UINavigationController* listNav = [[UINavigationController alloc] initWithRootViewController:listVC];
+
+    UITabBarController* tabs = [UITabBarController new];
+    tabs.viewControllers = @[listNav, mapNav];
 
     UIScreen* screen = [UIScreen mainScreen];
     CGRect bounds = [screen bounds];
-    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:listVC];
-    
-    UITabBarController* tabs = [UITabBarController new];
-
-    tabs.viewControllers = @[nav, mapVC];
-
     self.window = [[UIWindow alloc] initWithFrame:bounds];
     [self.window setRootViewController:tabs];
     
