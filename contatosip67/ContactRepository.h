@@ -15,12 +15,12 @@
 
 - (Contact *)contactByID:(NSInteger)_id;
 - (NSInteger)getContactID:(Contact *)contact;
-
 - (void) update:(Contact*)contact byID:(NSInteger)id_;
 - (void) add:(Contact*)contact;
 - (void) remove:(Contact*)contact;
-
 - (NSArray<Contact*> *)listAll;
 - (NSUInteger)count;
+
+@property (strong, nonatomic) NSMutableArray* contacts;
 
 @end

@@ -7,13 +7,41 @@
 //
 
 #import "ContactRepository.h"
+#import "CoreDataManager.h"
 
-@interface ContactRepository ()
+# pragma Persistent Objects
 
-@property (strong, nonatomic) NSMutableArray* contacts;
+@interface ContactDB : NSManagedObject
+@property NSString* name;
+@property NSString* phone;
+@property NSString* email;
+@property NSString* address;
+@property NSString* site;
+@property UIImage* photo;
+@property NSNumber* lon;
+@property NSNumber* lat;
+
+- (void)syncFromContact:(Contact*)c;
+@end
+
+
+@implementation ContactDB
+@dynamic name, phone, email, address, site, photo, lat, lon;
+
+- (void)syncFromContact:(Contact *)c {
+    self.name = c.name;
+    self.phone = c.phone;
+    self.email = c.email;
+    self.site = c.site;
+    self.photo = c.photo;
+    self.lat = [NSNumber numberWithDouble:c.lat];
+    self.lon = [NSNumber numberWithDouble:c.lon];
+}
 
 @end
 
+
+# pragma Repository
 
 @implementation ContactRepository
 
@@ -26,14 +54,6 @@ static ContactRepository* instance;
     return instance;
 }
 
-- (id) init {
-    self = [super init];
-    if (self) {
-        _contacts = [NSMutableArray new];
-    }
-    return self;
-}
-
 - (Contact *)contactByID:(NSInteger)_id {
     return [_contacts objectAtIndex:_id];
 }
@@ -43,10 +63,17 @@ static ContactRepository* instance;
 }
 
 - (void)add:(Contact *)contact {
-    [_contacts addObject:contact];
+    CoreDataManager* manager = [CoreDataManager sharedManager];
+    ContactDB* row = [NSEntityDescription insertNewObjectForEntityForName:@"Contato" inManagedObjectContext:[manager managedObjectContext]];
+    [row syncFromContact:contact];
+    [manager saveContext];
 }
 
 - (void) update:(Contact*)contact byID:(NSInteger)id_ {
+    CoreDataManager* manager = [CoreDataManager sharedManager];
+    ContactDB* row = [NSEntityDescription insertNewObjectForEntityForName:@"Contato" inManagedObjectContext:[manager managedObjectContext]];
+    [row syncFromContact:contact];
+    [manager saveContext];
     [_contacts setObject:contact atIndexedSubscript:id_];
 }
 
@@ -55,6 +82,16 @@ static ContactRepository* instance;
 }
 
 - (NSArray<Contact*> *)listAll {
+    CoreDataManager* manager = [CoreDataManager sharedManager];
+    NSFetchRequest* query = [NSFetchRequest fetchRequestWithEntityName:@"Contato"];
+    NSArray<ContactDB*>* data = [[manager managedObjectContext] executeFetchRequest:query error:nil];
+    _contacts = [@[] mutableCopy];
+    for (ContactDB* c in data) {
+        Contact* contact = [[Contact alloc] initWithName:c.name phone:c.phone email:c.email address:c.address site:c.address photo:c.photo];
+        contact.lat = [c.lat doubleValue];
+        contact.lon = [c.lon doubleValue];
+        [_contacts addObject:contact];
+    }
     return _contacts;
 }
 

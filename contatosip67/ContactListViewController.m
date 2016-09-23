@@ -52,7 +52,7 @@ const NSInteger SECTIONS = 1;
     if (_selectedContact) {
         NSInteger id_ = [[ContactRepository sharedManager] getContactID:_selectedContact];
         NSIndexPath* path = [NSIndexPath indexPathForItem:id_ inSection:0];
-        [self.tableView selectRowAtIndexPath:path animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+//        [self.tableView selectRowAtIndexPath:path animated:YES scrollPosition:UITableViewScrollPositionMiddle];
         _selectedContact = nil;
     }
 }
