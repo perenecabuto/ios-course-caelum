@@ -58,6 +58,12 @@
             initWithName:_name.text phone:_phone.text email:_email.text address:_address.text site:_site.text photo:_image.image];
 }
 
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    UIImage* selectedImage = [info valueForKey:UIImagePickerControllerEditedImage];
+    [_image setImage:selectedImage];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)openImage:(id)sender {
     UIImagePickerController* picker = [UIImagePickerController new];
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -66,10 +72,6 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    UIImage* selectedImage = [info valueForKey:UIImagePickerControllerEditedImage];
-    [_image setImage:selectedImage];
-    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
