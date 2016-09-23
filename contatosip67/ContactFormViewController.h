@@ -26,8 +26,14 @@
 @property (weak, nonatomic) IBOutlet UITextField* address;
 @property (weak, nonatomic) IBOutlet UITextField* site;
 
+@property (weak, nonatomic) IBOutlet UILabel *lonLatDebug;
+@property (weak, nonatomic) IBOutlet UIButton *findAddressButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *findAddressLoading;
+
+
 @property (weak, nonatomic) id<ContactFormViewControllerDelegate> delegate;
 
 - (IBAction)openImage:(id)sender;
+- (IBAction)findAddressPosition:(id)sender;
 
 @end

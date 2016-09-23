@@ -90,25 +90,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Telefone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNx-Kv-weP">
-                                <rect key="frame" x="20" y="127" width="66" height="21"/>
+                                <rect key="frame" x="20" y="122" width="66" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnA-2R-yEA">
-                                <rect key="frame" x="37" y="160" width="49" height="21"/>
+                                <rect key="frame" x="37" y="155" width="49" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Endereço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcT-aP-ZM2">
-                                <rect key="frame" x="13" y="194" width="73" height="21"/>
+                                <rect key="frame" x="13" y="261" width="73" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Site" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bus-hO-ypz">
-                                <rect key="frame" x="56" y="229" width="30" height="21"/>
+                                <rect key="frame" x="56" y="193" width="30" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -129,17 +129,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xm9-Zu-TrA">
-                                <rect key="frame" x="94" y="185" width="206" height="30"/>
+                                <rect key="frame" x="94" y="257" width="168" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qNC-Nw-jDh">
-                                <rect key="frame" x="94" y="219" width="206" height="30"/>
+                                <rect key="frame" x="94" y="189" width="206" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24Y-yF-FCT">
-                                <rect key="frame" x="40" y="93" width="46" height="21"/>
+                                <rect key="frame" x="40" y="88" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -154,6 +154,22 @@
                                     <action selector="openImage:" destination="7gK-IW-Rdm" eventType="touchUpInside" id="X5k-xf-EHz"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lon/lat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAb-Nl-jN9">
+                                <rect key="frame" x="94" y="295" width="168" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VLv-H5-pqh">
+                                <rect key="frame" x="275" y="261" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1s2-BH-vLT">
+                                <rect key="frame" x="270" y="257" width="30" height="30"/>
+                                <state key="normal" image="gps"/>
+                                <connections>
+                                    <action selector="findAddressPosition:" destination="7gK-IW-Rdm" eventType="touchUpInside" id="waP-fF-LCv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -161,7 +177,10 @@
                     <connections>
                         <outlet property="address" destination="xm9-Zu-TrA" id="36x-OX-J3B"/>
                         <outlet property="email" destination="2Ix-k6-IcD" id="Mur-Y7-eU1"/>
+                        <outlet property="findAddressButton" destination="1s2-BH-vLT" id="GBt-Ob-MjA"/>
+                        <outlet property="findAddressLoading" destination="VLv-H5-pqh" id="561-fI-Rup"/>
                         <outlet property="image" destination="Uxl-kP-rLp" id="lWH-9w-Se1"/>
+                        <outlet property="lonLatDebug" destination="HAb-Nl-jN9" id="8dG-yx-JrR"/>
                         <outlet property="name" destination="03v-Rt-G9h" id="1I1-0g-OIe"/>
                         <outlet property="phone" destination="yHL-Y2-iMt" id="BhM-uu-qEu"/>
                         <outlet property="site" destination="qNC-Nw-jDh" id="cSB-5K-hiN"/>
@@ -201,4 +220,7 @@
             <point key="canvasLocation" x="1368" y="387"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gps" width="30" height="30"/>
+    </resources>
 </document>
