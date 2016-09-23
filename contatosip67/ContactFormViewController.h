@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+
 #import "Contact.h"
 
 @protocol ContactFormViewControllerDelegate <NSObject>
@@ -25,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UITextField* email;
 @property (weak, nonatomic) IBOutlet UITextField* address;
 @property (weak, nonatomic) IBOutlet UITextField* site;
+@property (assign, nonatomic) CLLocationCoordinate2D addressCoords;
 
 @property (weak, nonatomic) IBOutlet UILabel *lonLatDebug;
 @property (weak, nonatomic) IBOutlet UIButton *findAddressButton;

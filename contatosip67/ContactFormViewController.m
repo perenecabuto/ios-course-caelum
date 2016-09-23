@@ -54,8 +54,12 @@
 }
 
 - (Contact *) contactFromFields {
-    return [[Contact alloc]
+    Contact* c = [[Contact alloc]
             initWithName:_name.text phone:_phone.text email:_email.text address:_address.text site:_site.text photo:_image.image];
+    if (CLLocationCoordinate2DIsValid(_addressCoords)) {
+        [c setCoords:_addressCoords];
+    }
+    return c;
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {

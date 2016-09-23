@@ -18,6 +18,10 @@
 @property (nonatomic, strong) NSString* site;
 @property (nonatomic, strong) UIImage* photo;
 
+@property double lon;
+@property double lat;
+
 - (id)initWithName:(NSString*)name phone:(NSString*)phone email:(NSString*)email address:(NSString*)address site:(NSString*)site photo:(UIImage*)photo;
+- (void)setCoords:(CLLocationCoordinate2D)coords;
 
 @end

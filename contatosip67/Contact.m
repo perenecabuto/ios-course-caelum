@@ -25,6 +25,11 @@
     return self;
 }
 
+- (void)setCoords:(CLLocationCoordinate2D)coords {
+    _lat = coords.latitude;
+    _lon = coords.longitude;
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"%@ (%@) <%@>", _name, _phone, _email];
